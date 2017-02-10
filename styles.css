@@ -4,14 +4,21 @@
 }
 
 html {
-  background: #fafafa;
+  background: #efebeb;
+}
+
+main {
+  background: #f4f4e7;
+  border: 3px solid #ddd7be;
+  box-shadow: 3px 5px #979885;
+  min-height: 480px;
 }
 
 * {
   margin: 2vw;
   font-family: "Cursive";
   font-size: 4vw;
-  color: #1f1f1f;
+  color: #312e2e;
 }
 
 a:hover {

@@ -1,20 +1,25 @@
-const game = document.querySelector('main');
+/* jshint esnext:true */
+/* jshint browser:true */
 
-const getAllSiblings = element => [...element.parentElement.children].filter(child => child !== element);
+const game = document.querySelector('main');
 
 const createLink = (text, fn) => {
   const link = document.createElement('a');
   link.setAttribute('href', '#');
   link.innerHTML = text;
-  link.onclick = () => {
-    console.log(text);
-    getAllSiblings(link).forEach(sibling => {
-      link.parentElement.removeChild(sibling);
-    });
-    addNextNode();
-  };
+  link.onclick = fn;
 
   return link;
+};
+
+const createSpan = (text, classes = []) => {
+  const span = document.createElement('span');
+  span.innerHTML = text;
+  classes.forEach(c => {
+    span.classList.add(c);
+  });
+
+  return span;
 };
 
 const createNode = (sectionName, line) => {
@@ -23,14 +28,31 @@ const createNode = (sectionName, line) => {
   node.classList.add(sectionName);
 
   line.forEach(option => {
-    node.appendChild(createLink(option.text));
-    node.appendChild(document.createElement('br'));
+    node.appendChild(createLink(option.text, () => {
+      const div = document.querySelector('.' + sectionName);
+      div.appendChild(createSpan(option.text));
+      game.removeChild(node);
+      addNextNode();
+    }));
   });
 
   return node;
 };
 
-const createNextNode = () => {
+const createSections = (sectionName) => {
+  const divs = sections.map(s => {
+    const div = document.createElement('div');
+    div.classList.add(s.id);
+
+    return div;
+  });
+
+  divs.forEach(div => {
+    game.appendChild(div);
+  });
+};
+
+const addNextNode = () => {
   const section = sections[0];
 
   if (!section) {
@@ -39,15 +61,13 @@ const createNextNode = () => {
 
   const line = section.lines.shift();
 
+  const node = createNode(section.id, line);
+  game.appendChild(node);
+
   if (!section.lines.length) {
     sections.shift();
   }
-
-  return createNode(section.id, line);
 };
 
-const addNextNode = () => {
-  game.appendChild(createNextNode());
-};
-
+createSections();
 addNextNode();
