@@ -1,13 +1,7 @@
-This is to be a sort of text adventure game... Maybe a Twine game or just vanilla JS.
+# Dear Hunter
 
-It's called Dear Hunter, which of course is a play on Deer Hunter... but in it you're composing a letter to a guy named Hunter.
+Compose a letter to your dear friend Hunter. [Play it](https://okaybenji.github.io/dear-hunter/)!
 
-Keeping it simple.
+![Screenshot](http://i.imgur.com/6MeyfP0.png)
 
-You pick lines for several sentences, then a closing, and finally a signature from multiple choices.
-
-Then, you send the letter off, and you get one back from Hunter that you can read.
-
-Each choice has a counter-part/analog in the letter you get back in reply.
-
-That's it!
+Font: [Mightype](https://befonts.com/download/mightype)
