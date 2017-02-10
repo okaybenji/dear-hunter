@@ -76,8 +76,14 @@ createSections();
 addNextNode();
 
 const receiveReply = () => {
-  [...game.querySelectorAll('span')]
-    .forEach(span => {
-      span.innerHTML = lines.find(line => line.text === span.innerHTML).response;
-    });
+  const spans = [...game.querySelectorAll('span')];
+
+  spans.forEach(span => {
+    span.innerHTML = lines.find(line => line.text === span.innerHTML).response;
+  });
+
+  // Delete the old signature line and overwrite the present greeting.
+  const sig = game.querySelector('.signature');
+  game.querySelector('.greeting').innerHTML = sig.innerHTML;
+  game.removeChild(sig);
 };
