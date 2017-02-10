@@ -1,0 +1,19 @@
+@font-face{
+  font-family: "Cursive";
+  src: url('cursive.otf');
+}
+
+html {
+  background: #fafafa;
+}
+
+* {
+  margin: 2vw;
+  font-family: "Cursive";
+  font-size: 4vw;
+  color: #1f1f1f;
+}
+
+a:hover {
+  color: #573f98;
+}
