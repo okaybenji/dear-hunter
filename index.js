@@ -2,6 +2,10 @@
 /* jshint browser:true */
 
 const game = document.querySelector('main');
+const lines = sections
+  .map(section => section.lines)
+  .reduce((acc, curr) => [...acc, ...curr])
+  .reduce((acc, curr) => [...acc, ...curr]);
 
 const createLink = (text, fn) => {
   const link = document.createElement('a');
@@ -70,3 +74,10 @@ const addNextNode = () => {
 
 createSections();
 addNextNode();
+
+const receiveReply = () => {
+  [...game.querySelectorAll('span')]
+    .forEach(span => {
+      span.innerHTML = lines.find(line => line.text === span.innerHTML).response;
+    });
+};
