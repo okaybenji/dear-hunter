@@ -25,7 +25,6 @@ const createSpan = (text, classes = []) => {
 const createNode = (sectionName, line) => {
   const node = document.createElement('div');
   node.classList.add('node');
-  node.classList.add(sectionName);
 
   line.forEach(option => {
     node.appendChild(createLink(option.text, () => {

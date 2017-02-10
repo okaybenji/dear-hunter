@@ -8,17 +8,26 @@ html {
 }
 
 main {
+  margin: 2vw;
   background: #f4f4e7;
   border: 3px solid #ddd7be;
   box-shadow: 3px 5px #979885;
   min-height: 480px;
 }
 
+div {
+  margin: 4vw;
+}
+
 * {
-  margin: 2vw;
   font-family: "Cursive";
   font-size: 4vw;
   color: #312e2e;
+}
+
+a {
+  display: block;
+  color: #a7a7a7;
 }
 
 a:hover {
