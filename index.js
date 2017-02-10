@@ -59,6 +59,11 @@ const addNextNode = () => {
   const section = sections[0];
 
   if (!section) {
+    const div = document.createElement('div');
+    div.classList.add('mailer');
+    div.appendChild(createLink('Mail it!', receiveReply));
+    game.appendChild(div);
+
     return;
   }
 
@@ -76,6 +81,9 @@ createSections();
 addNextNode();
 
 const receiveReply = () => {
+  // Remove the Mail it! link.
+  game.removeChild(game.querySelector('.mailer'));
+
   const spans = [...game.querySelectorAll('span')];
 
   spans.forEach(span => {
