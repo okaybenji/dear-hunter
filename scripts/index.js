@@ -7,6 +7,8 @@ const lines = sections
   .reduce((acc, curr) => [...acc, ...curr])
   .reduce((acc, curr) => [...acc, ...curr]);
 
+const writeSfx = ['writeA', 'writeB', 'writeC', 'writeD'].map(filename => new Audio('./sfx/' + filename + '.webm'));
+
 const createLink = (text, fn) => {
   const link = document.createElement('a');
   link.setAttribute('href', '#');
@@ -26,12 +28,17 @@ const createSpan = (text, classes = []) => {
   return span;
 };
 
+const playWriteSfx = () => {
+  writeSfx[Math.floor(Math.random() * writeSfx.length)].play();
+};
+
 const createNode = (sectionName, line) => {
   const node = document.createElement('div');
   node.classList.add('node');
 
   line.forEach(option => {
     node.appendChild(createLink(option.text, () => {
+      playWriteSfx();
       const div = document.querySelector('.' + sectionName);
       div.appendChild(createSpan(option.text));
       game.removeChild(node);
