@@ -8,20 +8,20 @@ html {
 }
 
 main {
-  margin: 2vw;
+  margin: 2vh;
   background: #f4f4e7;
   border: 3px solid #ddd7be;
   box-shadow: 3px 5px #979885;
-  min-height: 480px;
+  min-height: 320px;
 }
 
 div {
-  margin: 4vw;
+  margin: 4vh;
 }
 
 * {
   font-family: "Cursive";
-  font-size: 4vw;
+  font-size: 6vh;
   color: #312e2e;
   animation: fadeIn 0.5s;
   transition: all 0.5s;
@@ -34,8 +34,8 @@ div {
 
 a {
   font-family: "Helvetica";
-  font-size: 2vw;
-  margin-top: 1vw;
+  font-size: 4vh;
+  margin-top: 2vh;
   display: block;
   color: #a7a7a7;
 }
