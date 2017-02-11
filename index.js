@@ -93,8 +93,11 @@ const receiveReply = () => {
     section.appendChild(span);
   });
 
-  // Delete the old signature line and overwrite the present greeting.
+  // Delete the old signature line and overwrite the present greeting with a link to restart.
   const sig = game.querySelector('.signature');
   game.querySelector('.greeting').innerHTML = sig.innerHTML;
-  game.removeChild(sig);
+  sig.innerHTML = '';
+  sig.appendChild(createLink('Start a new letter', () => {
+    location.reload();
+  }));
 };
