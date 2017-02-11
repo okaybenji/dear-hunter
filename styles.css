@@ -43,3 +43,7 @@ a {
 a:hover {
   color: #573f98;
 }
+
+.reply {
+  animation: fadeIn 6s;
+}

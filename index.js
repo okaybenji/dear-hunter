@@ -81,16 +81,16 @@ createSections();
 addNextNode();
 
 const receiveReply = () => {
+  document.body.removeChild(game);
+  game.classList.add('reply');
+
   // Remove the Mail it! link.
   game.removeChild(game.querySelector('.mailer'));
 
   const spans = [...game.querySelectorAll('span')];
 
   spans.forEach(span => {
-    const section = span.parentElement;
-    section.removeChild(span);
     span.innerHTML = lines.find(line => line.text === span.innerHTML).response;
-    section.appendChild(span);
   });
 
   // Delete the old signature line and overwrite the present greeting with a link to restart.
@@ -100,4 +100,6 @@ const receiveReply = () => {
   sig.appendChild(createLink('Start a new letter', () => {
     location.reload();
   }));
+
+  document.body.appendChild(game);
 };
