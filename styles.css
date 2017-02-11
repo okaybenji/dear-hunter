@@ -23,9 +23,19 @@ div {
   font-family: "Cursive";
   font-size: 4vw;
   color: #312e2e;
+  animation: fadeIn 0.5s;
+  transition: all 0.5s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
 }
 
 a {
+  font-family: "Helvetica";
+  font-size: 2vw;
+  margin-top: 1vw;
   display: block;
   color: #a7a7a7;
 }

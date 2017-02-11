@@ -87,7 +87,10 @@ const receiveReply = () => {
   const spans = [...game.querySelectorAll('span')];
 
   spans.forEach(span => {
+    const section = span.parentElement;
+    section.removeChild(span);
     span.innerHTML = lines.find(line => line.text === span.innerHTML).response;
+    section.appendChild(span);
   });
 
   // Delete the old signature line and overwrite the present greeting.

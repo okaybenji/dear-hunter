@@ -137,7 +137,7 @@ const sections = [
           response: "Later,<br><br>Hunter",
         },
         {
-          text: "Yours in anger,.",
+          text: "Yours in anger,",
           response: "Peace,<br><br>Hunter",
         },
         {
