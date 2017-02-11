@@ -78,7 +78,7 @@ const sections = [
         },
         {
           text: "I stepped on a crack, but as far as I know, everyone's mother's back is ok.",
-          response: "Actually, now that you mention it, my mother's back <i>is</i> broken...",
+          response: "Actually, now that you mention it, my mother's back is broken...",
         },
       ],
       [

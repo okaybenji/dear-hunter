@@ -1,6 +1,11 @@
 @font-face{
   font-family: "Cursive";
-  src: url('cursive.otf');
+  src: url("cursive.otf");
+}
+
+@font-face{
+  font-family: "Print";
+  src: url("print.ttf");
 }
 
 html {
@@ -33,8 +38,7 @@ div {
 }
 
 a {
-  font-family: "Helvetica";
-  font-size: 4vh;
+  font-family: "Print";
   margin-top: 2vh;
   display: block;
   color: #a7a7a7;
@@ -46,4 +50,12 @@ a:hover {
 
 .reply {
   animation: fadeIn 6s;
+}
+
+.reply span {
+  font-family: "Print" !important;
+}
+
+span::after {
+  content: " ";
 }
