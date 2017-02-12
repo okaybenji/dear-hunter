@@ -88,6 +88,8 @@ createSections();
 addNextNode();
 
 const receiveReply = () => {
+  new Audio('./sfx/youvegotmail.webm').play();
+
   document.body.removeChild(game);
   game.classList.add('reply');
 
