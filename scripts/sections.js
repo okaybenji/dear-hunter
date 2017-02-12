@@ -51,7 +51,7 @@ const sections = [
         },
         {
           text: "I'm writing from inside a cardboard refrigerator box.",
-          response: "My face is on fire.",
+          response: "My face is on fire, though.",
         },
         {
           text: "This letter is being dictated, and will not be proof-read.",
